@@ -72,8 +72,9 @@ def pivoting(matrix):
     for i in range(n):
         highest = A[i][i]
         highest_index = i
-        for j in range(n):
-            if abs(A[j][i]) > abs(highest) and j >= i:
+
+        for j in range(i, n):
+            if abs(A[j][i]) > abs(highest):
                 highest = A[j][i]
                 highest_index = j
 
@@ -85,4 +86,3 @@ def pivoting(matrix):
             p += 1
 
     return A, p
-
