@@ -51,13 +51,13 @@ from .differentiation.finite_differences import (
     central_nth as fd_nth_derivative,
 )
 
-from .differentiation.richardson import (calculate as richardson_derivative)
+from .differentiation.richardson import calculate as richardson_derivative
 
 # ---------------------------------------------------------------------------
 # Integration
 # ---------------------------------------------------------------------------
 
-from .integration.rectangle import (integrate as rectangle_integrate)
+from .integration.rectangle import integrate as rectangle_integrate
 
 from .integration.trapezoidal import (
     integrate as trapezoidal_integrate,
@@ -70,16 +70,16 @@ from .integration.midpoint import (
     triple_integrate as midpoint_triple_integrate,
 )
 
-from .integration.simpson1 import (integrate as simpson1_integrate)
-from .integration.simpson2 import (integrate as simpson2_integrate)
-from .integration.monte_carlo import (integrate as monte_carlo_integrate)
-from .integration.gauss_legendre import (integrate as gauss_legendre_integrate)
+from .integration.simpson1 import integrate as simpson1_integrate
+from .integration.simpson2 import integrate as simpson2_integrate
+from .integration.monte_carlo import integrate as monte_carlo_integrate
+from .integration.gauss_legendre import integrate as gauss_legendre_integrate
 
 # ---------------------------------------------------------------------------
 # Linear Algebra
 # ---------------------------------------------------------------------------
 
-from .linear_algebra.jacobian import (calculate as jacobian_calculate)
+from .linear_algebra.jacobian import calculate as jacobian_calculate
 
 from .linear_algebra.elimination import (
     gauss as gauss_elimination,
@@ -92,7 +92,7 @@ from .linear_algebra.decomposition import (
     QR as QR_decomposition,
 )
 
-from .linear_algebra.determinant import (calculate as determinant_calculate)
+from .linear_algebra.determinant import calculate as determinant_calculate
 
 from .linear_algebra.eigenvalues import (
     power_method as power_method_calculate,
@@ -100,34 +100,40 @@ from .linear_algebra.eigenvalues import (
     jacobi_method as jacobi_method_calculate,
 )
 
-from .linear_algebra.linear_system import (solve as linearsystem_solve)
+from .linear_algebra.linear_system import solve as linearsystem_solve
 
 # ---------------------------------------------------------------------------
 # Root Finding
 # ---------------------------------------------------------------------------
 
-from .roots.bisection import (calculate as bisection_calculate)
-from .roots.newton_raphson import (calculate as newton_raphson_calculate)
-from .roots.ridders import (calculate as ridders_calculate)
+from .roots.bisection import calculate as bisection_calculate
+from .roots.newton_raphson import calculate as newton_raphson_calculate
+from .roots.ridders import calculate as ridders_calculate
 
 # ---------------------------------------------------------------------------
 # Series
 # ---------------------------------------------------------------------------
 
-from .series.taylor import (approx_function as taylor_approx)
-from .series.fourier import (approx_function as fourier_approx)
+from .series.taylor import approx_function as taylor_approx
+from .series.fourier import approx_function as fourier_approx
+
+# ---------------------------------------------------------------------------
+# Utilities
+# ---------------------------------------------------------------------------
+
+from .utilities.errors import error_calculate
 
 # ---------------------------------------------------------------------------
 # Visualization
 # ---------------------------------------------------------------------------
 
-from .visualization.plotter import (plot_function)
+from .visualization.plotter import plot_function
 
 # ---------------------------------------------------------------------------
 # Package Metadata
 # ---------------------------------------------------------------------------
 
-__version__ = "5.6"
+__version__ = "5.7"
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -175,6 +181,9 @@ __all__ = [
     # Series
     "taylor_approx",
     "fourier_approx",
+
+    # Utilities
+    "error_calculate",
 
     # Visualization
     "plot_function",
