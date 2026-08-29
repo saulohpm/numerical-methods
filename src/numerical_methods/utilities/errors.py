@@ -47,8 +47,9 @@ def error_calculate(vv: float, va: float, type: str = "rel_abs"):
 
 def objective_functions(Qsim, Qobs, N: int, type: str = "MSE"):
 
-    MSE = 1 / N
-    for i in range(N):
-        MSE += (Qsim[i] - Qobs[i]) ** 2
-
-    return MSE
+    if type == "MSE":
+        MSE = 1 / N
+    
+        for i in range(N):
+            MSE += (Qsim[i] - Qobs[i]) ** 2
+        return MSE
