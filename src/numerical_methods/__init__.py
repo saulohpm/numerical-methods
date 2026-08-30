@@ -121,7 +121,7 @@ from .series.fourier import approx_function as fourier_approx
 # Utilities
 # ---------------------------------------------------------------------------
 
-from .utilities.errors import error_calculate
+from .utilities.errors import error_calculate, objective_functions
 
 # ---------------------------------------------------------------------------
 # Visualization
@@ -133,7 +133,7 @@ from .visualization.plotter import plot_function
 # Package Metadata
 # ---------------------------------------------------------------------------
 
-__version__ = "0.6.1"
+__version__ = "0.6.2"
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -184,6 +184,7 @@ __all__ = [
 
     # Utilities
     "error_calculate",
+    "objective_functions",
 
     # Visualization
     "plot_function",
