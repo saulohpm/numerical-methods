@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Version](https://img.shields.io/badge/Version-0.6.0-orange)
+![Version](https://img.shields.io/badge/Version-0.6.1-orange)
 [![Tests](https://img.shields.io/github/actions/workflow/status/saulohpm/NumericalMethods/tests.yml?label=Tests)](https://github.com/saulohpm/NumericalMethods/actions/workflows/tests.yml)
 
 Educational Python library implementing classical numerical methods from scratch, including root finding, numerical integration, differentiation, linear algebra, Fourier and Taylor series, with unit tests and performance benchmarks.
@@ -22,11 +22,17 @@ This started as a study project to practice numerical analysis concepts and has 
 ```bash
 gh repo clone saulohpm/NumericalMethods
 cd NumericalMethods
+```
+```bash
 pip install -e ".[dev]"
 ```
 
 This installs the package in editable mode, along with `pytest` for running
-the tests.
+the tests. For Personal use, you can try:
+
+```bash
+pip install .
+```
 
 ## Usage
 

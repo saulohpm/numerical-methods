@@ -47,7 +47,7 @@ def error_calculate(vv: float, va: float, type: str = "rel_abs"):
 
 def objective_functions(Qsim, Qobs, N: int, type: str = "MSE"):
 
-    type = type.lower()
+    type = type.upper()
 
     if type == "MSE":
         MSE = 0
