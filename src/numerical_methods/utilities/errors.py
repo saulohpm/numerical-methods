@@ -47,9 +47,53 @@ def error_calculate(vv: float, va: float, type: str = "rel_abs"):
 
 def objective_functions(Qsim, Qobs, N: int, type: str = "MSE"):
 
+    type = type.lower()
+
     if type == "MSE":
-        MSE = 1 / N
+        MSE = 0
     
         for i in range(N):
             MSE += (Qsim[i] - Qobs[i]) ** 2
-        return MSE
+
+        return 1 / N * MSE
+
+    elif type == "RMSE":
+        return objective_functions(Qsim, Qobs, N, "MSE") ** (0.5)
+
+    elif type == "MAE":
+        MAE = 0
+
+        for i in range(N):
+            MAE += abs(Qsim[i] - Qobs[i])
+
+        return 1 / N * MAE
+
+    elif type == "NSE":
+        NSE = 0
+        Qobs_average = sum(Qobs) / len(Qobs)
+
+        for i in range(N):
+            NSE += (Qsim[i] - Qobs[i]) ** 2 / (Qobs[i] - Qobs_average) ** 2
+
+        return 1 - NSE
+
+    elif type == "R²":
+        R = 0
+        Qobs_average = sum(Qobs) / len(Qobs)
+        Qsim_average = sum(Qsim) / len(Qsim)
+
+        for i in range(N):
+            R += (Qsim[i] - Qsim_average) * (Qobs[i] - Qobs_average) / ((Qsim[i] - Qsim_average) ** 2 * (Qobs[i] - Qobs_average) ** 2) ** (0.5)
+
+        return R ** 2
+
+    elif type == "MBE":
+        MBE = 0
+
+        for i in range(N):
+            MBE += (Qsim[i] - Qobs[i])
+
+        return 1 / N * MBE
+    
+    else:
+        raise ValueError("ERROR: Enter a valid error type in the 'type' field.")
