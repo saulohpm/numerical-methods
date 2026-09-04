@@ -102,8 +102,6 @@ for method in ("gauss", "lu"):
     det_method = determinant.calculate(A_chol, method=method)
     assert np.abs(det_method - reference_det) < 1e-6, method
 
-print("All linear_algebra tests PASSED.")
-
 # ---------------------------------------------------------------------------
 # Eigenvalues
 # ---------------------------------------------------------------------------
@@ -163,3 +161,5 @@ def test_jacobi_method_eigenvalues():
     expected = np.sort(np.linalg.eigvalsh(A))
 
     assert np.allclose(computed, expected, atol = 1e-5)
+
+print("All linear_algebra tests PASSED.")
