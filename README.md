@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Version](https://img.shields.io/badge/Version-0.6.4-orange)
+![Version](https://img.shields.io/badge/Version-0.6.5-orange)
 [![Tests](https://img.shields.io/github/actions/workflow/status/saulohpm/NumericalMethods/tests.yml?label=Tests)](https://github.com/saulohpm/NumericalMethods/actions/workflows/tests.yml)
 
 Educational Python library implementing classical numerical methods from scratch, including root finding, numerical integration, differentiation, linear algebra, Fourier and Taylor series, with unit tests and performance benchmarks.
@@ -137,6 +137,8 @@ NumericalMethods/
 ```
 
 ## References
+- Chapra, S. C.; Canale, R. P. *Métodos Numéricos para Engenharia*. Tradução da 5ª edição por Helena Castro. Porto Alegre: AMGH, 2008.
+
 - Linge, S., & Langtangen, H. P. *Programming for Computations – Python: A Gentle Introduction to Numerical Simulations with Python 3.6*. 2nd ed. Springer, 2019. Available at: https://link.springer.com/book/10.1007/978-3-030-16877-3
 
 - Cardoso, E. L. *Fundamentos de Cálculo Numérico: Notas de Aula*. PPGEM. Available at: <https://github.com/CodeLenz/Notas-de-aula/blob/main/Fundamentos%20de%20Matem%C3%A1tica/Fundamentos_de_Algebra_Computacional.pdf>.
