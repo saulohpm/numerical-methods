@@ -32,7 +32,7 @@ def plot_function(f, x, a = None, b = None, f2 = None):
     plt.figure(figsize=(14,6))
 
     if a is not None and b is not None and f2 is None:
-        plt.plot(x, y, color='blue')
+        plt.plot(x, y, color='blue', label = "∫f(x)dx")
         plt.fill_between(x, y, alpha=0.3)
 
         plt.title("Definite Integral")
@@ -42,18 +42,22 @@ def plot_function(f, x, a = None, b = None, f2 = None):
         plt.ylim(0, float(f(b)))
 
     elif a is None and b is None and f2 is None:
-        raise ValueError("ERROR: a and b and f2 cannot be None")
+        plt.plot(x, y, color='blue', label = "f(x)")
+
+        plt.title("Function Plot")
+        plt.xlabel("x")
+        plt.ylabel("f(x)")
 
     else:
-        plt.title(f"Interactions using series")
+        plt.title(f"Interactions using two functions")
         plt.plot(x, y, label='f(x)')
-        plt.plot(x, f2, label='Series')
+        plt.plot(x, f2, label='f2(x)')
         plt.xlim(a, b)
         y_min, y_max = np.min(y), np.max(y)
         margem = (y_max - y_min) * 0.1 if y_max != y_min else 1.0
         plt.ylim(y_min - margem, y_max + margem)
         
     plt.legend()
-    plt.grid(True, alpha=0.75)
+    plt.grid(True, alpha = 0.75)
 
     plt.show()

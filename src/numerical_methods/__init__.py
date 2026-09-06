@@ -52,6 +52,7 @@ from .differentiation.finite_differences import (
 )
 
 from .differentiation.richardson import calculate as richardson_derivative
+from .differentiation.derivative_function import derivative_function as function_derivative
 
 # ---------------------------------------------------------------------------
 # Integration
@@ -133,7 +134,7 @@ from .visualization.plotter import plot_function
 # Package Metadata
 # ---------------------------------------------------------------------------
 
-__version__ = "0.6.3"
+__version__ = "0.6.4"
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -147,6 +148,7 @@ __all__ = [
     "fd_central_derivative",
     "fd_nth_derivative",
     "richardson_derivative",
+    "function_derivative"
 
     # Integration
     "rectangle_integrate",

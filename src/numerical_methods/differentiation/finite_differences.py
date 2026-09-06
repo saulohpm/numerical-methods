@@ -1,6 +1,7 @@
+from typing import Callable
 import math
 
-def forward(f, x0: float, deltax: float = 1e-5):
+def forward(f: Callable, x0: float, deltax: float = 1e-5):
     """
     Approximate the derivative of f at x0 using the forward difference formula.
 
@@ -20,7 +21,7 @@ def forward(f, x0: float, deltax: float = 1e-5):
     """
     return (f(x0 + deltax) - f(x0)) / deltax
 
-def backward(f, x0: float, deltax: float = 1e-5):
+def backward(f: Callable, x0: float, deltax: float = 1e-5):
     """
     Approximate the derivative of f at x0 using the backward difference formula.
 
@@ -40,7 +41,7 @@ def backward(f, x0: float, deltax: float = 1e-5):
     """
     return (f(x0) - f(x0 - deltax)) / deltax
 
-def central(f, x0: float, deltax: float = 1e-5):
+def central(f: Callable, x0: float, deltax: float = 1e-5):
     """
     Approximate the derivative of f at x0 using the central difference formula.
 
@@ -62,7 +63,7 @@ def central(f, x0: float, deltax: float = 1e-5):
     return (f(x0 + deltax) - f(x0 - deltax)) / (2 * deltax)
 
 
-def central_nth(f, x0: float, deltax: float = 1e-5, degree: int = 1):
+def central_nth(f: Callable, x0: float, deltax: float = 1e-5, degree: int = 1):
     """
     Approximate the n-th derivative of f at x0 using a central
     finite difference formula built directly from f (does not
