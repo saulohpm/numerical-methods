@@ -39,7 +39,9 @@ def plot_function(f, x, a = None, b = None, f2 = None):
         plt.xlabel("x")
         plt.ylabel("f(x)")
         plt.xlim(a, b)
-        plt.ylim(0, float(f(b)))
+        y_max = np.max(y)
+        margem = (y_max) * 0.1 if y_max != 0 else 1.0
+        plt.ylim(0, y_max + margem)
 
     elif a is None and b is None and f2 is None:
         plt.plot(x, y, color='blue', label = "f(x)")
@@ -49,13 +51,16 @@ def plot_function(f, x, a = None, b = None, f2 = None):
         plt.ylabel("f(x)")
 
     else:
+        y2 = f2(x)
         plt.title(f"Interactions using two functions")
         plt.plot(x, y, label='f(x)')
-        plt.plot(x, f2, label='f2(x)')
+        plt.plot(x, y2, label='f2(x)')
         plt.xlim(a, b)
-        y_min, y_max = np.min(y), np.max(y)
-        margem = (y_max - y_min) * 0.1 if y_max != y_min else 1.0
-        plt.ylim(y_min - margem, y_max + margem)
+        y_min, y_max, f2_min, f2_max = np.min(y), np.max(y), np.min(y2), np.max(y2)
+        max = y_max if y_max > f2_max else f2_max
+        min = y_min if y_min < f2_min else f2_min
+        margem = (max - min) * 0.1 if max != min else 1.0
+        plt.ylim(min - margem, max + margem)
         
     plt.legend()
     plt.grid(True, alpha = 0.75)
