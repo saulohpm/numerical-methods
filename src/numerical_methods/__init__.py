@@ -134,7 +134,7 @@ from .visualization.plotter import plot_function
 # Package Metadata
 # ---------------------------------------------------------------------------
 
-__version__ = "0.6.6"
+__version__ = "0.6.7"
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -148,7 +148,7 @@ __all__ = [
     "fd_central_derivative",
     "fd_nth_derivative",
     "richardson_derivative",
-    "function_derivative"
+    "function_derivative",
 
     # Integration
     "rectangle_integrate",
