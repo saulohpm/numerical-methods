@@ -1,6 +1,6 @@
 from numerical_methods.linear_algebra import (
     jacobian, elimination, decomposition, determinant,
-    linear_system, eigenvalues, iterative_methods
+    linear_system, eigenvalues, iterative_methods, nonlinear_system
 )
 import numpy as np
 
@@ -138,6 +138,20 @@ def test_jacobi_method_eigenvalues():
     expected = np.sort(np.linalg.eigvalsh(A))
 
     assert np.allclose(computed, expected, atol=1e-5)
+
+
+def test_newton_raphson():
+    F = lambda x: np.array([
+        x[0] ** 2 + x[1] ** 2 - 4,
+        x[0] - x[1]
+    ])
+    J = lambda x: jacobian.calculate(F, x, h=1e-6)
+    x0 = np.array([1.0, 1.0])
+    expected = np.array([np.sqrt(2), np.sqrt(2)])
+
+    x = nonlinear_system.newton_raphson(F, J, x0, tol=1e-8, max_iter=100)
+
+    assert np.allclose(x, expected, atol=1e-6)
 
 
 if __name__ == "__main__":

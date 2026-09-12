@@ -106,7 +106,7 @@ from .linear_algebra.iterative_methods import (
 
 from .linear_algebra.jacobian import calculate as jacobian_calculate
 from .linear_algebra.linear_system import solve as linearsystem_solve
-from .linear_algebra.nonlinear_system import *
+from .linear_algebra.nonlinear_system import newton_raphson as nonlinearsystem_solve
 
 # ---------------------------------------------------------------------------
 # Root Finding
@@ -134,7 +134,7 @@ from .utilities.plotter import plot_function
 # Package Metadata
 # ---------------------------------------------------------------------------
 
-__version__ = "0.6.8"
+__version__ = "0.6.9"
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -176,6 +176,7 @@ __all__ = [
     "linearsystem_solve",
     "gaussjacobi_linearsystem_solve",
     "gaussseidel_linearsystem_solve",
+    "nonlinearsystem_solve",
 
 
     # Root Finding
