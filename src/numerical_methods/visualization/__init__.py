@@ -1,1 +1,0 @@
-"""Plotting utilities for visualizing functions and integration results."""

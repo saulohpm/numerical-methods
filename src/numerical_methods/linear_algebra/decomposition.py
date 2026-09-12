@@ -54,8 +54,6 @@ def LU(matrix):
 
                 L[i][i] = A[i][i] - soma
 
-                
-                
     return L, U
 
 

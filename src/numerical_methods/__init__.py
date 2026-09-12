@@ -80,13 +80,6 @@ from .integration.gauss_legendre import integrate as gauss_legendre_integrate
 # Linear Algebra
 # ---------------------------------------------------------------------------
 
-from .linear_algebra.jacobian import calculate as jacobian_calculate
-
-from .linear_algebra.elimination import (
-    gauss as gauss_elimination,
-    pivoting as pivoting_elimination,
-)
-
 from .linear_algebra.decomposition import (
     LU as lu_decomposition,
     cholesky as cholesky_decomposition,
@@ -101,7 +94,19 @@ from .linear_algebra.eigenvalues import (
     jacobi_method as jacobi_method_calculate,
 )
 
+from .linear_algebra.elimination import (
+    gauss as gauss_elimination,
+    pivoting as pivoting_elimination,
+)
+
+from .linear_algebra.iterative_methods import (
+    GaussJacobi as gaussjacobi_linearsystem_solve,
+    GaussSeidel as gaussseidel_linearsystem_solve,
+)
+
+from .linear_algebra.jacobian import calculate as jacobian_calculate
 from .linear_algebra.linear_system import solve as linearsystem_solve
+from .linear_algebra.nonlinear_system import *
 
 # ---------------------------------------------------------------------------
 # Root Finding
@@ -123,18 +128,13 @@ from .series.fourier import approx_function as fourier_approx
 # ---------------------------------------------------------------------------
 
 from .utilities.errors import error_calculate, objective_functions
-
-# ---------------------------------------------------------------------------
-# Visualization
-# ---------------------------------------------------------------------------
-
-from .visualization.plotter import plot_function
+from .utilities.plotter import plot_function
 
 # ---------------------------------------------------------------------------
 # Package Metadata
 # ---------------------------------------------------------------------------
 
-__version__ = "0.6.7"
+__version__ = "0.6.8"
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -174,6 +174,9 @@ __all__ = [
     "inverse_power_method_calculate",
     "jacobi_method_calculate",
     "linearsystem_solve",
+    "gaussjacobi_linearsystem_solve",
+    "gaussseidel_linearsystem_solve",
+
 
     # Root Finding
     "bisection_calculate",

@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Version](https://img.shields.io/badge/Version-0.6.7-orange)
+![Version](https://img.shields.io/badge/Version-0.6.8-orange)
 [![Tests](https://img.shields.io/github/actions/workflow/status/saulohpm/NumericalMethods/tests.yml?label=Tests)](https://github.com/saulohpm/NumericalMethods/actions/workflows/tests.yml)
 
 Educational Python library implementing classical numerical methods from scratch, including root finding, numerical integration, differentiation, linear algebra, Fourier and Taylor series, with unit tests and performance benchmarks.
@@ -105,8 +105,13 @@ NumericalMethods/
 │       │   ├── determinant.py
 │       │   ├── eigenvalues.py
 │       │   ├── elimination.py
+│       │   ├── iterative_methods.py
 │       │   ├── jacobian.py
-│       │   └── linear_system.py
+│       │   ├── linear_system.py
+│       │   └── nonlinear_system.py
+│       │
+│       ├── ODE/
+│       │   ├── __init__.py
 │       │
 │       ├── roots/
 │       │   ├── __init__.py
@@ -119,12 +124,9 @@ NumericalMethods/
 │       │   ├── fourier.py
 │       │   └── taylor.py
 │       │
-│       ├── utilities/
-│       │   ├── __init__.py
-│       │   └── errors.py
-│       │
-│       └── visualization/
+│       └── utilities/
 │           ├── __init__.py
+│           ├── errors.py
 │           └── plotter.py
 │
 └── tests/
