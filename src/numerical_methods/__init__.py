@@ -109,6 +109,12 @@ from .linear_algebra.linear_system import solve as linearsystem_solve
 from .linear_algebra.nonlinear_system import newton_raphson as nonlinearsystem_solve
 
 # ---------------------------------------------------------------------------
+# ODE
+# ---------------------------------------------------------------------------
+
+from .ODE.euler import euler_explicit as ODE_solve_euler_explicit
+
+# ---------------------------------------------------------------------------
 # Root Finding
 # ---------------------------------------------------------------------------
 
@@ -134,7 +140,7 @@ from .utilities.plotter import plot_function
 # Package Metadata
 # ---------------------------------------------------------------------------
 
-__version__ = "0.6.9"
+__version__ = "0.7.0"
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -178,6 +184,8 @@ __all__ = [
     "gaussseidel_linearsystem_solve",
     "nonlinearsystem_solve",
 
+    # ODE
+    "ODE_solve_euler_explicit",
 
     # Root Finding
     "bisection_calculate",
