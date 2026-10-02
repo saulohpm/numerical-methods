@@ -1,6 +1,6 @@
 from typing import Callable
 
-def euler_explicit(f: Callable, t0: float, y0: float, tf: float, n: int):
+def euler_explicit(f: Callable, t0: float, y0: float, tf: float, n: int = 100):
     """
     Solve the initial value problem y' = f(t, y), y(t0) = y0, using the
     explicit (forward) Euler method.
@@ -32,16 +32,19 @@ def euler_explicit(f: Callable, t0: float, y0: float, tf: float, n: int):
     The local truncation error is O(h**2) and the global error is O(h).
     """
 
+    if n <= 1:
+        raise ValueError("n must be higher than 1!")
+
     h = (tf - t0) / n
 
-    t = [0] * (n + 1)
-    y = [0] * (n + 1)
+    t = [0.0] * (n + 1)
+    y = [0.0] * (n + 1)
 
     t[0] = t0
     y[0] = y0
 
     for i in range(n):
-        y[i + 1] = y[i] + h *f(t[i], y[i])
-        t[i + 1] = t[i] + h
+        t[i + 1] = t0 + (i + 1) * h
+        y[i + 1] = y[i] + h * f(t[i], y[i])
 
     return t, y
