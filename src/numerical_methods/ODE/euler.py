@@ -1,6 +1,6 @@
 from typing import Callable
 
-def euler_explicit(f: Callable, t0: float, y0: float, tf: float, n: int = 100):
+def explicit(f: Callable, t0: float, y0: float, tf: float, n: int = 100):
     """
     Solve the initial value problem y' = f(t, y), y(t0) = y0, using the
     explicit (forward) Euler method.

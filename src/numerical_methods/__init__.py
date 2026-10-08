@@ -112,7 +112,8 @@ from .linear_algebra.nonlinear_system import newton_raphson as nonlinearsystem_s
 # ODE
 # ---------------------------------------------------------------------------
 
-from .ODE.euler import euler_explicit as ODE_solve_euler_explicit
+from .ODE.euler import explicit as ode_solve_euler_explicit
+from .ODE.runge_kutta import two as ode_solve_rk2
 
 # ---------------------------------------------------------------------------
 # Root Finding
@@ -140,7 +141,7 @@ from .utilities.plotter import plot_function
 # Package Metadata
 # ---------------------------------------------------------------------------
 
-__version__ = "0.7.3"
+__version__ = "0.7.4"
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -185,7 +186,8 @@ __all__ = [
     "nonlinearsystem_solve",
 
     # ODE
-    "ODE_solve_euler_explicit",
+    "ode_solve_euler_explicit",
+    "ode_solve_rk2",
 
     # Root Finding
     "bisection_calculate",
