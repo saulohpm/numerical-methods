@@ -141,7 +141,7 @@ from .utilities.plotter import plot_function
 # Package Metadata
 # ---------------------------------------------------------------------------
 
-__version__ = "0.7.5"
+__version__ = "0.7.6"
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -149,7 +149,6 @@ __version__ = "0.7.5"
 
 __all__ = [
     # Differentiation
-    "fd",
     "fd_forward_derivative",
     "fd_backward_derivative",
     "fd_central_derivative",

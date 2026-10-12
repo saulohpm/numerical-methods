@@ -1,15 +1,16 @@
 [build-system]
-requires = ["setuptools>=68.0"]
+requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "numerical-methods"
-version = "0.7.5"
 description = "Educational Python solver for Numerical Analysis and Scientific Computing"
+version = "0.7.6"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = ["numpy", "scipy", "matplotlib"]
-license = {file = "LICENSE"}
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{name = "saulohpm"}]
 
 [project.urls]
